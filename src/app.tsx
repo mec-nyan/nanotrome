@@ -69,7 +69,7 @@ function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
       <button class='control minus-one' onClick={() => handleBpmChange(bpm, -1)}>−1</button>
       <button class='control plus-ten' onClick={() => handleBpmChange(bpm, 10)}>＋10</button>
       <button class='control minus-ten' onClick={() => handleBpmChange(bpm, -10)}>−10</button>
-      <button class='control reset' onClick={() => setBpm(120)}>Reset</button>
+      <button class='control reset' onClick={() => setBpm(baseBpm)}>Reset</button>
     </div>
   )
 }
