@@ -23,6 +23,7 @@ function Metronome() {
     <div className='metronome'>
       <Display bpm={bpm} />
       <Controls bpm={bpm} setBpm={setBpm} />
+      <Beats />
     </div>
   )
 }
@@ -103,6 +104,52 @@ function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
           </div>
           <div className='control-label'>reset</div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+function Beats() {
+  // TODO: Beat info may come from props.
+  interface Beat {
+    label: number
+    active: boolean
+  }
+
+  const beatInfo: Beat[] = [
+    {
+      label: 1,
+      active: true,
+    },
+    {
+      label: 2,
+      active: false,
+    },
+    {
+      label: 3,
+      active: false,
+    },
+    {
+      label: 4,
+      active: false,
+    },
+  ]
+
+  const beats = beatInfo.map((beat) => {
+    return (
+        <div className={`beat ${beat.active && "active"}`}>
+          <div className={`beat-label ${!beat.active && "hidden"}`}>{beat.label}</div>
+          <div className='beat-indicator'></div>
+        </div>
+    )
+  })
+
+  return (
+    <div className='beat-outer-container'>
+      <div className='beat-line'>
+
+        {beats}
+
       </div>
     </div>
   )
