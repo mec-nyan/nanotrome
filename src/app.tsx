@@ -19,11 +19,14 @@ export function App() {
 
 function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
+  const [isOn, setIsOn] = useState(false);
+
   return (
     <div className='metronome'>
       <Display bpm={bpm} />
       <Controls bpm={bpm} setBpm={setBpm} />
       <Beats />
+      <StartStopButton isOn={isOn} setIsOn={setIsOn} />
     </div>
   )
 }
@@ -151,6 +154,19 @@ function Beats() {
         {beats}
 
       </div>
+    </div>
+  )
+}
+
+function StartStopButton({isOn, setIsOn}: {isOn: boolean, setIsOn: (isOn: boolean) => void}) {
+
+  function toggleOn() {
+    setIsOn(!isOn)
+  }
+
+  return (
+    <div className='start-stop-container'>
+      <div className='start-stop-button' onClick={toggleOn}>{isOn ? 'Stop' : 'Start'}</div>
     </div>
   )
 }
