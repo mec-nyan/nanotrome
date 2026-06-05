@@ -1,10 +1,7 @@
 import { useState } from 'preact/hooks'
 import './app.css'
+import { baseBpm, getTempoName, maxBpm, minBpm } from './tempo';
 
-// TODO: Check these values.
-const baseBpm = 120
-const maxBpm = 300
-const minBpm = 40
 
 export function App() {
 
@@ -43,9 +40,6 @@ function TopBar() {
 }
 
 function Display({bpm}: {bpm: number}) {
-  // TODO: Implement types and methods to retrieve the tempo's
-  // name according to the current BPM.
-  const [tempo, _setTempo] = useState('Allegro')
 
   return (
     <div className='display-outer-container'>
@@ -53,7 +47,7 @@ function Display({bpm}: {bpm: number}) {
         <div className='display-tag'>BPM</div>
         <div className='display'>
           <div className='bpm'>{bpm}</div>
-          <div className='tempo'>{tempo}</div>
+          <div className='tempo'>{getTempoName(bpm)}</div>
         </div>
       </div>
     </div>
