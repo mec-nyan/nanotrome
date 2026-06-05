@@ -10,7 +10,7 @@ export function App() {
 
   return (
     <div className='app'>
-      <AppName />
+      <TopBar />
       <Metronome />
       <Footer />
     </div>
@@ -31,10 +31,13 @@ function Metronome() {
   )
 }
 
-function AppName() {
+function TopBar() {
+  // TODO: Menu isOpen must come from props.
+  let isOpen = false
   return (
     <div className='top-bar'>
       <span className='app-name'>nanotrome</span>
+      <span className='material-symbols-outlined menu-icon'>{isOpen ? 'menu' : 'close'}</span>
     </div>
   )
 }
@@ -140,9 +143,9 @@ function Beats() {
 
   const beats = beatInfo.map((beat) => {
     return (
-        <div className={`beat ${beat.active && "active"}`}>
+        <div className={`beat`}>
           <div className={`beat-label ${!beat.active && "hidden"}`}>{beat.label}</div>
-          <div className='beat-indicator'></div>
+          <div className={`beat-indicator ${beat.active && "active"}`}></div>
         </div>
     )
   })
@@ -166,7 +169,9 @@ function StartStopButton({isOn, setIsOn}: {isOn: boolean, setIsOn: (isOn: boolea
 
   return (
     <div className='start-stop-container'>
-      <div className='start-stop-button' onClick={toggleOn}>{isOn ? 'Stop' : 'Start'}</div>
+      <div className='start-stop-button-outer'>
+        <div className='start-stop-button' onClick={toggleOn}>{isOn ? 'Stop' : 'Start'}</div>
+      </div>
     </div>
   )
 }
