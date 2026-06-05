@@ -36,11 +36,18 @@ function AppName() {
 }
 
 function Display({bpm}: {bpm: number}) {
+  // TODO: Implement types and methods to retrieve the tempo's
+  // name according to the current BPM.
+  const [tempo, _setTempo] = useState('Allegro')
+
   return (
-    <div className='display-container'>
-      <div className='display'>
+    <div className='display-outer-container'>
+      <div className='display-inner-container'>
         <div className='display-tag'>BPM</div>
-        <div className='bpm'>{bpm}</div>
+        <div className='display'>
+          <div className='bpm'>{bpm}</div>
+          <div className='tempo'>{tempo}</div>
+        </div>
       </div>
     </div>
   )
@@ -64,12 +71,39 @@ function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
   }
 
   return (
-    <div className='controls'>
-      <button class='control plus-one' onClick={() => handleBpmChange(bpm, 1)}>＋1</button>
-      <button class='control minus-one' onClick={() => handleBpmChange(bpm, -1)}>−1</button>
-      <button class='control plus-ten' onClick={() => handleBpmChange(bpm, 10)}>＋10</button>
-      <button class='control minus-ten' onClick={() => handleBpmChange(bpm, -10)}>−10</button>
-      <button class='control reset' onClick={() => setBpm(baseBpm)}>Reset</button>
+    <div className='controls-outer-container'>
+      <div className='controls'>
+        <div class='control plus-one' onClick={() => handleBpmChange(bpm, 1)}>
+          <div className='control-button-outer'>
+            <div className='control-button-inner'></div>
+          </div>
+          <div className='control-label'>+1</div>
+        </div>
+        <div class='control minus-one' onClick={() => handleBpmChange(bpm, -1)}>
+          <div className='control-button-outer'>
+            <div className='control-button-inner'></div>
+          </div>
+          <div className='control-label'>-1</div>
+        </div>
+        <div class='control plus-ten' onClick={() => handleBpmChange(bpm, 10)}>
+          <div className='control-button-outer'>
+            <div className='control-button-inner'></div>
+          </div>
+          <div className='control-label'>+10</div>
+        </div>
+        <div class='control minus-ten' onClick={() => handleBpmChange(bpm, -10)}>
+          <div className='control-button-outer'>
+            <div className='control-button-inner'></div>
+          </div>
+          <div className='control-label'>-10</div>
+        </div>
+        <div class='control reset' onClick={() => setBpm(baseBpm)}>
+          <div className='control-button-outer'>
+            <div className='control-button-inner'></div>
+          </div>
+          <div className='control-label'>reset</div>
+        </div>
+      </div>
     </div>
   )
 }
