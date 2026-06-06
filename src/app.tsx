@@ -231,14 +231,12 @@ function BeatSelector({label, num, setNum}: {label: string, num: number, setNum:
 
   return (
     <div className='selector-outer-container'>
-      <div className='selector-label'>{label}:</div>
+      <div className='selector-label'>{label}</div>
 
       <div className='selector-inner-container'>
-        <div>
-          <div className='selector-minus' onClick={() => handleSetNum('decrement')}>-</div>
-          <div className='seletor-value'>{num}</div>
-          <div className='selector-plus' onClick={() => handleSetNum('increment')}>+</div>
-        </div>
+        <div className='selector-minus' onClick={() => handleSetNum('decrement')}>-</div>
+        <div className='selector-value'>{num}</div>
+        <div className='selector-plus' onClick={() => handleSetNum('increment')}>+</div>
       </div>
     </div>
   )
