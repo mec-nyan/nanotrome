@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import './app.css'
 import { baseBpm, getTempoName, maxBpm, minBpm } from './tempo';
 
-import { type BeatType, MetronomeService } from './metronome';
+import { type BeatType, MetronomeService } from './metronomeService';
 
 
 export function App() {
@@ -75,7 +75,7 @@ function TopBar() {
   return (
     <div className='top-bar'>
       <span className='app-name'>nanotrome</span>
-      <span className='material-symbols-outlined menu-icon'>{isOpen ? 'menu' : 'close'}</span>
+      <span className='material-symbols-outlined menu-icon'>{isOpen ? 'close' : 'menu'}</span>
     </div>
   )
 }
@@ -203,7 +203,11 @@ function StartStopButton({isOn, toggle}: {isOn: boolean, toggle: () => void}) {
 function Footer() {
   return (
     <footer>
-      Made with <span className='material-symbols-outlined love'>favorite</span> by <span className='author'>nano</span>.
+      <span className='made-with-love'>
+        Made with{' '}
+        <span className='material-symbols-outlined love'>favorite</span> by{' '}
+        <span className='author'>nano</span>.
+      </span>
     </footer>
   )
 }

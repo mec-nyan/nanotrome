@@ -243,14 +243,23 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 1px solid var(--bg-secondary);
+  /* border: 1px solid pink; */
+}
+
+.made-with-love {
   font-family: "Orbitron", "Ubuntu Sans", "Noto Sans", sans-serif;
   font-size: 0.8rem;
   color: var(--mid-gray);
-  /* border: 1px solid pink; */
 }
 
 .love {
   color: hotpink;
   font-size: 1rem;
   margin: 0 4px;
+  transform: translateY(2px);
+}
+
+.author {
+  color: mediumslateblue;
+  font: inherit;
 }
