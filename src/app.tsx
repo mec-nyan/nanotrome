@@ -19,7 +19,8 @@ export function App() {
 function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
   const [isOn, setIsOn] = useState(false);
-  const [currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
+  // I'll use 'beatType' to display subdivision.
+  const [_currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
   const [currentBeatNumber, setCurrentBeatNumber] = useState<number>(0)
   const metronomeRef = useRef<MetronomeService | null>(null)
   const unsubscribeRef = useRef<() => void | null>(null)
@@ -63,7 +64,7 @@ function Metronome() {
     <div className='metronome'>
       <Display bpm={bpm} />
       <Controls bpm={bpm} setBpm={setBpm} />
-      <Beats beatNumber={currentBeatNumber} running={isOn} />
+      <BeatsDisplay beatNumber={currentBeatNumber} running={isOn} />
       <StartStopButton isOn={isOn} toggle={toggleMetronome} />
     </div>
   )
@@ -150,7 +151,7 @@ function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
   )
 }
 
-function Beats({beatNumber, running }: { beatNumber: number, running: boolean}) {
+function BeatsDisplay({beatNumber, running }: { beatNumber: number, running: boolean}) {
   // TODO: Beat info may come from props.
   interface Beat {
     label: number
@@ -182,7 +183,7 @@ function Beats({beatNumber, running }: { beatNumber: number, running: boolean}) 
     <div className='beat-outer-container'>
       <div className='beat-line'>
 
-        {beats}
+        {running && beats}
 
       </div>
     </div>
