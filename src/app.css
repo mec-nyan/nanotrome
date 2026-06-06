@@ -181,10 +181,15 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   color: var(--mid-gray);
+  transition: opacity 0.3s ease-out;
 }
 
 .beat-label.hidden {
-  opacity: 0.3;
+  opacity: 0.0;
+}
+
+.beat-indicator.off {
+  background-color: var(--bg-primary);
 }
 
 .beat-indicator {
@@ -193,6 +198,7 @@
   border-radius: 50%;
   background-color: var(--bg-secondary);
   margin-top: 16px;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .beat-indicator.active {

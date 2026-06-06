@@ -1,6 +1,8 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import './app.css'
 import { baseBpm, getTempoName, maxBpm, minBpm } from './tempo';
+
+import { type BeatType, MetronomeService } from './metronome';
 
 
 export function App() {
@@ -17,13 +19,52 @@ export function App() {
 function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
   const [isOn, setIsOn] = useState(false);
+  const [currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
+  const [currentBeatNumber, setCurrentBeatNumber] = useState<number>(0)
+  const metronomeRef = useRef<MetronomeService | null>(null)
+  const unsubscribeRef = useRef<() => void | null>(null)
+
+  useEffect(() => {
+    metronomeRef.current = new MetronomeService(bpm)
+
+    unsubscribeRef.current = metronomeRef.current.onBeat((beatType, beatNumber) => {
+      setCurrentBeatType(beatType)
+      if (beatNumber > 0) {
+        setCurrentBeatNumber(beatNumber)
+      }
+    })
+
+    return () => {
+      metronomeRef.current?.stop()
+      unsubscribeRef.current?.()
+    }
+  }, [])
+
+  useEffect(() => {
+    metronomeRef.current?.setTempo(bpm)
+  }, [bpm])
+
+  const toggleMetronome = () => {
+    if (!metronomeRef.current) return
+
+    if (isOn) {
+      metronomeRef.current.stop()
+      setIsOn(false)
+      setCurrentBeatNumber(0)
+      setCurrentBeatType(null)
+    } else {
+      metronomeRef.current.start()
+      setIsOn(true)
+    }
+  }
+
 
   return (
     <div className='metronome'>
       <Display bpm={bpm} />
       <Controls bpm={bpm} setBpm={setBpm} />
-      <Beats />
-      <StartStopButton isOn={isOn} setIsOn={setIsOn} />
+      <Beats beatNumber={currentBeatNumber} running={isOn} />
+      <StartStopButton isOn={isOn} toggle={toggleMetronome} />
     </div>
   )
 }
@@ -109,37 +150,30 @@ function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
   )
 }
 
-function Beats() {
+function Beats({beatNumber, running }: { beatNumber: number, running: boolean}) {
   // TODO: Beat info may come from props.
   interface Beat {
     label: number
     active: boolean
+    off: boolean
   }
 
-  const beatInfo: Beat[] = [
-    {
-      label: 1,
-      active: true,
-    },
-    {
-      label: 2,
-      active: false,
-    },
-    {
-      label: 3,
-      active: false,
-    },
-    {
-      label: 4,
-      active: false,
-    },
-  ]
+  let beatInfo: Beat[] = []
+  for (let i = 0; i < 4; i++) {
+    const active = beatNumber === i + 1
+    const off = !running
+    beatInfo.push({
+      label: i+1,
+      active: active,
+      off: off
+    })
+  }
 
   const beats = beatInfo.map((beat) => {
     return (
         <div className={`beat`}>
           <div className={`beat-label ${!beat.active && "hidden"}`}>{beat.label}</div>
-          <div className={`beat-indicator ${beat.active && "active"}`}></div>
+          <div className={`beat-indicator ${beat.active && "active"} ${beat.off && "off"}`}></div>
         </div>
     )
   })
@@ -155,16 +189,12 @@ function Beats() {
   )
 }
 
-function StartStopButton({isOn, setIsOn}: {isOn: boolean, setIsOn: (isOn: boolean) => void}) {
-
-  function toggleOn() {
-    setIsOn(!isOn)
-  }
+function StartStopButton({isOn, toggle}: {isOn: boolean, toggle: () => void}) {
 
   return (
     <div className='start-stop-container'>
       <div className='start-stop-button-outer'>
-        <div className='start-stop-button' onClick={toggleOn}>{isOn ? 'Stop' : 'Start'}</div>
+        <div className='start-stop-button' onClick={toggle}>{isOn ? 'Stop' : 'Start'}</div>
       </div>
     </div>
   )
