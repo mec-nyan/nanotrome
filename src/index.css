@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,favorite,menu&display=swap');
 
-
 :root {
   --fg-primary: #d0d0d0;
   --fg-secondary: #b0b0b0;
@@ -26,5 +25,5 @@ body {
   background-color: var(--bg-primary);
   color: var(--fg-primary);
 
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }

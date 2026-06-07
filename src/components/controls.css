@@ -41,7 +41,16 @@
   justify-content: center;
   background-color: var(--bg-darker);
   /* background-image: conic-gradient(from 45deg, purple, steelblue, limegreen, steelblue, purple); */
-  background-image: conic-gradient(from 192deg, darkslateblue, black, var(--bg-darker) 120deg, var(--bg-tertiary), var(--bg-darker) 240deg, black, darkslateblue);
+  background-image: conic-gradient(
+    from 192deg,
+    darkslateblue,
+    black,
+    var(--bg-darker) 120deg,
+    var(--bg-tertiary),
+    var(--bg-darker) 240deg,
+    black,
+    darkslateblue
+  );
   border: 2px solid black;
   border-radius: 50%;
 }

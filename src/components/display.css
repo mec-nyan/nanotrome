@@ -18,7 +18,7 @@
   background-color: var(--bg-darker);
   color: var(--fg-tertiary);
   font-size: 0.7rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   /* letter-spacing: 1px; */
   border: 1px solid var(--bg-secondary);
   border-radius: 8px 8px 0px 0px;
@@ -42,12 +42,12 @@
 .bpm {
   color: var(--fg-tertiary);
   font-size: 3rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .tempo {
   color: var(--fg-tertiary);
-  font-family: "Charis SIL", serif;
+  font-family: 'Charis SIL', serif;
   font-style: italic;
   font-size: 1rem;
 }

@@ -4,8 +4,8 @@ export type BeatCallback = (beatType: BeatType, beatNumber: number) => void
 
 export class MetronomeService {
   private audioContext: AudioContext
-  private isRunning= false
-  private currentBeatIndex= 0
+  private isRunning = false
+  private currentBeatIndex = 0
   private tempo = 120
   private subdivisions = 1
   private nextNoteTime = 0
@@ -16,7 +16,9 @@ export class MetronomeService {
   private penidngVisualUpdates: Set<number> = new Set()
 
   constructor(tempo: number) {
-    this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+    this.audioContext = new (
+      window.AudioContext || (window as any).webkitAudioContext
+    )()
     this.tempo = tempo
   }
 
@@ -44,7 +46,7 @@ export class MetronomeService {
   onBeat(callback: BeatCallback) {
     this.beatCallbacks.push(callback)
     return () => {
-      this.beatCallbacks = this.beatCallbacks.filter(cb => cb !== callback)
+      this.beatCallbacks = this.beatCallbacks.filter((cb) => cb !== callback)
     }
   }
 
@@ -53,7 +55,10 @@ export class MetronomeService {
       return
     }
 
-    while (this.nextNoteTime < this.audioContext.currentTime + this.sheduleAheadTime) {
+    while (
+      this.nextNoteTime <
+      this.audioContext.currentTime + this.sheduleAheadTime
+    ) {
       this.sheduleNote(this.nextNoteTime, this.currentBeatIndex)
       this.nextNoteTime += this.noteLength()
       this.currentBeatIndex++
@@ -64,9 +69,10 @@ export class MetronomeService {
 
   private sheduleNote(time: number, beatIndex: number) {
     const noteType = this.getNoteType(beatIndex)
-    const displayBeatNumber = (beatIndex % this.subdivisions) === 0
-      ? Math.floor(beatIndex / this.subdivisions) % 4 + 1
-      : -1
+    const displayBeatNumber =
+      beatIndex % this.subdivisions === 0
+        ? (Math.floor(beatIndex / this.subdivisions) % 4) + 1
+        : -1
 
     this.playSound(time, noteType)
 
@@ -79,9 +85,8 @@ export class MetronomeService {
         return
       }
       this.penidngVisualUpdates.delete(updateId)
-      this.beatCallbacks.forEach(cb => cb(noteType, displayBeatNumber))
+      this.beatCallbacks.forEach((cb) => cb(noteType, displayBeatNumber))
     }, delayMs)
-
   }
 
   private getNoteType(beatIndex: number): BeatType {
@@ -104,9 +109,9 @@ export class MetronomeService {
 
     // TODO: use a noise generator (or sampled sounds) instead.
     const config = {
-      accent: {frequency: 880, duration: 0.1, volume: 0.5},
-      beat: {frequency: 440, duration: 0.08, volume: 0.4},
-      subdivision: {frequency: 220, duration: 0.05, volume: 0.3},
+      accent: { frequency: 880, duration: 0.1, volume: 0.5 },
+      beat: { frequency: 440, duration: 0.08, volume: 0.4 },
+      subdivision: { frequency: 220, duration: 0.05, volume: 0.3 },
     }
 
     const { frequency, duration, volume } = config[type]
@@ -120,6 +125,6 @@ export class MetronomeService {
   }
 
   private noteLength(): number {
-    return (60 / this.tempo) / this.subdivisions
+    return 60 / this.tempo / this.subdivisions
   }
 }

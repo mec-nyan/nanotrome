@@ -1,11 +1,17 @@
-import { baseBpm, maxBpm, minBpm } from "../audio/tempo"
+import { baseBpm, maxBpm, minBpm } from '../audio/tempo'
 import './controls.css'
 
-export default function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
+export default function Controls({
+  bpm,
+  setBpm,
+}: {
+  bpm: number
+  setBpm: (n: number) => void
+}) {
   function handleBpmChange(bpm: number, increment: number) {
     const newBpm = bpm + increment
 
-    if (newBpm > maxBpm ) {
+    if (newBpm > maxBpm) {
       setBpm(maxBpm)
       return
     }
@@ -39,7 +45,10 @@ export default function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number
           </div>
           <div className='control-label'>+10</div>
         </div>
-        <div class='control minus-ten' onClick={() => handleBpmChange(bpm, -10)}>
+        <div
+          class='control minus-ten'
+          onClick={() => handleBpmChange(bpm, -10)}
+        >
           <div className='control-button-outer'>
             <div className='control-button-inner'></div>
           </div>

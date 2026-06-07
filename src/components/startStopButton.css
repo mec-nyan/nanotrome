@@ -24,7 +24,7 @@
   align-items: center;
   background-color: var(--bg-darker);
   color: var(--fg-tertiary);
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.1rem;
   border: 1px solid var(--bg-secondary);
 }

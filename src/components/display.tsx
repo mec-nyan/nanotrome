@@ -1,8 +1,7 @@
-import { getTempoName } from "../audio/tempo";
+import { getTempoName } from '../audio/tempo'
 import './display.css'
 
-export default function Display({bpm}: {bpm: number}) {
-
+export default function Display({ bpm }: { bpm: number }) {
   return (
     <div className='display-outer-container'>
       <div className='display-inner-container'>

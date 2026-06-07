@@ -1,7 +1,14 @@
 import './beatsSelector.css'
 
-
-export default function BeatsSelector({label, num, setNum}: {label: string, num: number, setNum: (b: number) => void}) {
+export default function BeatsSelector({
+  label,
+  num,
+  setNum,
+}: {
+  label: string
+  num: number
+  setNum: (b: number) => void
+}) {
   // TODO: Handle max/min separately for beats and subdivision.
   const maxNum = 10
   const minNum = 1
@@ -28,9 +35,19 @@ export default function BeatsSelector({label, num, setNum}: {label: string, num:
       <div className='selector-label'>{label}</div>
 
       <div className='selector-inner-container'>
-        <div className='selector-minus' onClick={() => handleSetNum('decrement')}>-</div>
+        <div
+          className='selector-minus'
+          onClick={() => handleSetNum('decrement')}
+        >
+          -
+        </div>
         <div className='selector-value'>{num}</div>
-        <div className='selector-plus' onClick={() => handleSetNum('increment')}>+</div>
+        <div
+          className='selector-plus'
+          onClick={() => handleSetNum('increment')}
+        >
+          +
+        </div>
       </div>
     </div>
   )

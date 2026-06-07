@@ -11,10 +11,15 @@
 }
 
 .app-name {
-  background: linear-gradient(to right, var(--mid-gray), var(--fg-primary), var(--mid-gray));
+  background: linear-gradient(
+    to right,
+    var(--mid-gray),
+    var(--fg-primary),
+    var(--mid-gray)
+  );
   background-clip: text;
   color: transparent;
-  font-family: "Orbitron", "Noto Sans", sans-serif;
+  font-family: 'Orbitron', 'Noto Sans', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px black;

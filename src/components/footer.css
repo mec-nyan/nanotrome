@@ -9,7 +9,7 @@ footer {
 }
 
 .made-with-love {
-  font-family: "Orbitron", "Ubuntu Sans", "Noto Sans", sans-serif;
+  font-family: 'Orbitron', 'Ubuntu Sans', 'Noto Sans', sans-serif;
   font-size: 0.8rem;
   color: var(--mid-gray);
 }

@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "preact/hooks";
-import { baseBpm } from "../audio/tempo";
-import { type BeatType, MetronomeService } from "../audio/metronomeService";
-import Display from "./display";
-import BeatsConfig from "./beatsConfig";
-import BeatsDisplay from "./beatsDisplay";
-import Controls from "./controls";
-import StartStopButton from "./startStopButton";
+import { useEffect, useRef, useState } from 'preact/hooks'
+import { baseBpm } from '../audio/tempo'
+import { type BeatType, MetronomeService } from '../audio/metronomeService'
+import Display from './display'
+import BeatsConfig from './beatsConfig'
+import BeatsDisplay from './beatsDisplay'
+import Controls from './controls'
+import StartStopButton from './startStopButton'
 import './metronome.css'
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(false)
   // I'll use 'beatType' to display subdivision.
   const [_currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
   const [currentBeatNumber, setCurrentBeatNumber] = useState<number>(0)
@@ -20,12 +20,14 @@ export default function Metronome() {
   useEffect(() => {
     metronomeRef.current = new MetronomeService(bpm)
 
-    unsubscribeRef.current = metronomeRef.current.onBeat((beatType, beatNumber) => {
-      setCurrentBeatType(beatType)
-      if (beatNumber > 0) {
-        setCurrentBeatNumber(beatNumber)
+    unsubscribeRef.current = metronomeRef.current.onBeat(
+      (beatType, beatNumber) => {
+        setCurrentBeatType(beatType)
+        if (beatNumber > 0) {
+          setCurrentBeatNumber(beatNumber)
+        }
       }
-    })
+    )
 
     return () => {
       metronomeRef.current?.stop()
@@ -50,7 +52,6 @@ export default function Metronome() {
       setIsOn(true)
     }
   }
-
 
   return (
     <div className='metronome'>

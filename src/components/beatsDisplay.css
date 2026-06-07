@@ -22,7 +22,7 @@
 }
 
 .beat-label {
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1rem;
   text-align: center;
   color: var(--mid-gray);
@@ -31,7 +31,7 @@
 }
 
 .beat-label.hidden {
-  opacity: 0.0;
+  opacity: 0;
 }
 
 .beat-indicator.off {
