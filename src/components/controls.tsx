@@ -1,4 +1,5 @@
 import { baseBpm, maxBpm, minBpm } from "../audio/tempo"
+import './controls.css'
 
 export default function Controls({bpm, setBpm}: {bpm: number, setBpm: (n: number) => void}) {
   function handleBpmChange(bpm: number, increment: number) {

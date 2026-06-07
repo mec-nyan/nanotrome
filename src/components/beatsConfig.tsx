@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks"
 import BeatsSelector from "./beatsSelector"
+import './beatsConfig.css'
 
 export default function BeatsConfig() {
   // NOTE: These should come as props.

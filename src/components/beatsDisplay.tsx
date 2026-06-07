@@ -1,3 +1,6 @@
+import './beatsDisplay.css'
+
+
 export default function BeatsDisplay({beatNumber, running }: { beatNumber: number, running: boolean}) {
   // TODO: Beat info may come from props.
   interface Beat {

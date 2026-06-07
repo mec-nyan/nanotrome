@@ -1,0 +1,14 @@
+.beat-config-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid seagreen; */
+}
+
+.beat-config {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 8px; */
+}

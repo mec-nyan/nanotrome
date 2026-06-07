@@ -6,6 +6,7 @@ import BeatsConfig from "./beatsConfig";
 import BeatsDisplay from "./beatsDisplay";
 import Controls from "./controls";
 import StartStopButton from "./startStopButton";
+import './metronome.css'
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)

@@ -1,0 +1,55 @@
+.controls-outer-container {
+  width: 100%;
+  padding: 16px 0;
+  /* border: 1px solid limegreen; */
+}
+
+.controls {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  /* border: 1px solid limegreen; */
+}
+
+.control {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 48px 32px;
+  cursor: pointer;
+  align-items: center;
+  justify-items: center;
+  /* border: 1px solid pink; */
+}
+
+.control-label {
+  width: 100%;
+  /* height: 32px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--mid-gray);
+}
+
+.control-button-outer {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-darker);
+  /* background-image: conic-gradient(from 45deg, purple, steelblue, limegreen, steelblue, purple); */
+  background-image: conic-gradient(from 192deg, darkslateblue, black, var(--bg-darker) 120deg, var(--bg-tertiary), var(--bg-darker) 240deg, black, darkslateblue);
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.control-button-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-image: linear-gradient(var(--bg-primary), var(--bg-darker));
+  /* border: 1px solid black; */
+}

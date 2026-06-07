@@ -1,3 +1,6 @@
+import './startStopButton.css'
+
+
 export default function StartStopButton({isOn, toggle}: {isOn: boolean, toggle: () => void}) {
 
   return (

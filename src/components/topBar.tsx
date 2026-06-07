@@ -1,3 +1,6 @@
+import './topBar.css'
+
+
 export default function TopBar() {
   // TODO: Menu isOpen must come from props.
   let isOpen = false

@@ -1,3 +1,6 @@
+import './beatsSelector.css'
+
+
 export default function BeatsSelector({label, num, setNum}: {label: string, num: number, setNum: (b: number) => void}) {
   // TODO: Handle max/min separately for beats and subdivision.
   const maxNum = 10

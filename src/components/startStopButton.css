@@ -1,0 +1,30 @@
+.start-stop-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  /* border: 1px solid deeppink; */
+}
+
+.start-stop-button-outer {
+  width: 120px;
+  height: 48px;
+  cursor: pointer;
+  /* background-color: red; */
+}
+
+.start-stop-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-darker);
+  color: var(--fg-tertiary);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.1rem;
+  border: 1px solid var(--bg-secondary);
+}

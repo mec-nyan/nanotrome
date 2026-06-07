@@ -1,4 +1,5 @@
 import { getTempoName } from "../audio/tempo";
+import './display.css'
 
 export default function Display({bpm}: {bpm: number}) {
 
