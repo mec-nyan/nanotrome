@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
 import './app.css'
-import { baseBpm, getTempoName, maxBpm, minBpm } from './tempo';
+import { baseBpm, getTempoName, maxBpm, minBpm } from './audio/tempo';
 
-import { type BeatType, MetronomeService } from './metronomeService';
+import { type BeatType, MetronomeService } from './audio/metronomeService';
 
 
 export function App() {
