@@ -113,22 +113,60 @@ export class MetronomeService {
     gain.connect(this.audioContext.destination)
 
     // TODO: use a noise generator (or sampled sounds) instead.
-    const config = {
-      accent: { frequency: 880 },
-      beat: { frequency: 440 },
-      subdivision: { frequency: 220 },
+    interface OscConfig {
+      wave: OscillatorType
+      frequency: number
+      volume: number
+      attack: number
+      duration: number
+      end: number
     }
 
-    const { frequency } = config[type]
+    const config = new Map<BeatType, OscConfig>([
+      [
+        'accent',
+        {
+          wave: 'triangle',
+          frequency: 880,
+          volume: 0.5,
+          attack: 0.002,
+          duration: 0.04,
+          end: 0.05,
+        },
+      ],
+      [
+        'beat',
+        {
+          wave: 'triangle',
+          frequency: 440,
+          volume: 0.5,
+          attack: 0.002,
+          duration: 0.04,
+          end: 0.05,
+        },
+      ],
+      [
+        'subdivision',
+        {
+          wave: 'sine',
+          frequency: 440,
+          volume: 0.3,
+          attack: 0.002,
+          duration: 0.01,
+          end: 0.02,
+        },
+      ],
+    ])
 
-    const volume = 0.5
-    const duration = 0.04
-    const end = 0.05
+    const { wave, frequency, volume, attack, duration, end } = config.get(type)!
+
+    osc.type = wave
+
     const initialVolume = 0.001
 
     osc.frequency.value = frequency
     gain.gain.setValueAtTime(initialVolume, time)
-    gain.gain.linearRampToValueAtTime(volume, time + 0.002)
+    gain.gain.linearRampToValueAtTime(volume, time + attack)
     gain.gain.exponentialRampToValueAtTime(initialVolume, time + duration)
 
     osc.start(time)
