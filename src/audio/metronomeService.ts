@@ -109,19 +109,25 @@ export class MetronomeService {
 
     // TODO: use a noise generator (or sampled sounds) instead.
     const config = {
-      accent: { frequency: 880, duration: 0.1, volume: 0.5 },
-      beat: { frequency: 440, duration: 0.08, volume: 0.4 },
-      subdivision: { frequency: 220, duration: 0.05, volume: 0.3 },
+      accent: { frequency: 880 },
+      beat: { frequency: 440 },
+      subdivision: { frequency: 220 },
     }
 
-    const { frequency, duration, volume } = config[type]
+    const { frequency } = config[type]
+
+    const volume = 0.5
+    const duration = 0.04
+    const end = 0.05
+    const initialVolume = 0.001
 
     osc.frequency.value = frequency
-    gain.gain.setValueAtTime(volume, time)
-    gain.gain.exponentialRampToValueAtTime(0.01, time + duration)
+    gain.gain.setValueAtTime(initialVolume, time)
+    gain.gain.linearRampToValueAtTime(volume, time + 0.002)
+    gain.gain.exponentialRampToValueAtTime(initialVolume, time + duration)
 
     osc.start(time)
-    osc.stop(time + duration)
+    osc.stop(time + end)
   }
 
   private noteLength(): number {
