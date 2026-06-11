@@ -7,7 +7,7 @@ export class MetronomeService {
   private isRunning = false
   private currentBeatIndex = 0
   private tempo = 120
-  private subdivisions = 1
+  private subdivision = 1
   private nextNoteTime = 0
   private sheduleAheadTime = 0.1 // 100ms look-ahead
   private lookAheadTime = 0.025 // check every 25ms
@@ -43,6 +43,11 @@ export class MetronomeService {
     this.tempo = bpm
   }
 
+  setSubdivision(subdivision: number) {
+    // TODO: The logic for handling subdivision may belong here.
+    this.subdivision = subdivision > 0 ? subdivision : 1
+  }
+
   onBeat(callback: BeatCallback) {
     this.beatCallbacks.push(callback)
     return () => {
@@ -70,8 +75,8 @@ export class MetronomeService {
   private sheduleNote(time: number, beatIndex: number) {
     const noteType = this.getNoteType(beatIndex)
     const displayBeatNumber =
-      beatIndex % this.subdivisions === 0
-        ? (Math.floor(beatIndex / this.subdivisions) % 4) + 1
+      beatIndex % this.subdivision === 0
+        ? (Math.floor(beatIndex / this.subdivision) % 4) + 1
         : -1
 
     this.playSound(time, noteType)
@@ -90,8 +95,8 @@ export class MetronomeService {
   }
 
   private getNoteType(beatIndex: number): BeatType {
-    const subdivisionIndex = beatIndex % this.subdivisions
-    const quarterNoteIndex = Math.floor(beatIndex / this.subdivisions) % 4
+    const subdivisionIndex = beatIndex % this.subdivision
+    const quarterNoteIndex = Math.floor(beatIndex / this.subdivision) % 4
 
     if (subdivisionIndex === 0) {
       return quarterNoteIndex === 0 ? 'accent' : 'beat'
@@ -131,6 +136,6 @@ export class MetronomeService {
   }
 
   private noteLength(): number {
-    return 60 / this.tempo / this.subdivisions
+    return 60 / this.tempo / this.subdivision
   }
 }
