@@ -1,21 +1,24 @@
 import './beatsDisplay.css'
 
 export default function BeatsDisplay({
+  beats,
   beatNumber,
   running,
 }: {
+  beats: number
   beatNumber: number
   running: boolean
 }) {
   // TODO: Beat info may come from props.
-  interface Beat {
+  interface Light {
     label: number
     active: boolean
     off: boolean
   }
 
-  let beatInfo: Beat[] = []
-  for (let i = 0; i < 4; i++) {
+  let beatInfo: Light[] = []
+
+  for (let i = 0; i < beats; i++) {
     const active = beatNumber === i + 1
     const off = !running
     beatInfo.push({
@@ -25,7 +28,7 @@ export default function BeatsDisplay({
     })
   }
 
-  const beats = beatInfo.map((beat) => {
+  const lights = beatInfo.map((beat) => {
     return (
       <div className={`beat`}>
         <div className={`beat-label ${!beat.active && 'hidden'}`}>
@@ -40,7 +43,7 @@ export default function BeatsDisplay({
 
   return (
     <div className='beat-outer-container'>
-      <div className='beat-line'>{running && beats}</div>
+      <div className='beat-line'>{running && lights}</div>
     </div>
   )
 }

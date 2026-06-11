@@ -7,6 +7,7 @@ export class MetronomeService {
   private isRunning = false
   private currentBeatIndex = 0
   private tempo = 120
+  private beats: number = 4
   private subdivision = 1
   private nextNoteTime = 0
   private sheduleAheadTime = 0.1 // 100ms look-ahead
@@ -43,8 +44,15 @@ export class MetronomeService {
     this.tempo = bpm
   }
 
+  setBeats(beats: number) {
+    // TODO: I should set some limit on the number of beats.
+    // Also, when there's only 1 beat per measure it should play a single click.
+    this.beats = beats > 0 ? beats : 1
+  }
+
   setSubdivision(subdivision: number) {
     // TODO: The logic for handling subdivision may belong here.
+    // TODO: I should set some limit on this too.
     this.subdivision = subdivision > 0 ? subdivision : 1
   }
 
@@ -76,7 +84,7 @@ export class MetronomeService {
     const noteType = this.getNoteType(beatIndex)
     const displayBeatNumber =
       beatIndex % this.subdivision === 0
-        ? (Math.floor(beatIndex / this.subdivision) % 4) + 1
+        ? (Math.floor(beatIndex / this.subdivision) % this.beats) + 1
         : -1
 
     this.playSound(time, noteType)
@@ -96,7 +104,8 @@ export class MetronomeService {
 
   private getNoteType(beatIndex: number): BeatType {
     const subdivisionIndex = beatIndex % this.subdivision
-    const quarterNoteIndex = Math.floor(beatIndex / this.subdivision) % 4
+    const quarterNoteIndex =
+      Math.floor(beatIndex / this.subdivision) % this.beats
 
     if (subdivisionIndex === 0) {
       return quarterNoteIndex === 0 ? 'accent' : 'beat'
