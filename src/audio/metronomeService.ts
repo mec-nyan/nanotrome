@@ -6,7 +6,11 @@ import {
 
 export type BeatType = 'accent' | 'beat' | 'subdivision'
 
-export type BeatCallback = (beatType: BeatType, beatNumber: number) => void
+export type BeatCallback = (
+  beatType: BeatType,
+  beatNumber: number,
+  beatIndex: number
+) => void
 
 export class MetronomeService {
   private audioContext: AudioContext
@@ -104,7 +108,9 @@ export class MetronomeService {
         return
       }
       this.penidngVisualUpdates.delete(updateId)
-      this.beatCallbacks.forEach((cb) => cb(noteType, displayBeatNumber))
+      this.beatCallbacks.forEach((cb) =>
+        cb(noteType, displayBeatNumber, this.currentBeatIndex)
+      )
     }, delayMs)
   }
 
