@@ -108,9 +108,10 @@ export class MetronomeService {
         return
       }
       this.penidngVisualUpdates.delete(updateId)
-      this.beatCallbacks.forEach((cb) =>
-        cb(noteType, displayBeatNumber, this.currentBeatIndex)
-      )
+      this.beatCallbacks.forEach((cb) => {
+        const beatCount = Math.floor(beatIndex / this.subdivision)
+        cb(noteType, displayBeatNumber, beatCount)
+      })
     }, delayMs)
   }
 
