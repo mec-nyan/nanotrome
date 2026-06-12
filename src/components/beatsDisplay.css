@@ -38,30 +38,14 @@
   opacity: 0;
 }
 
-.beat-indicator.off {
-  background-color: var(--bg-primary);
-}
-
 @keyframes flash {
   0% {
-    opacity: 1;
+    background-color: hotpink;
   }
 
   100% {
-    opacity: 0;
+    background-color: var(--bg-secondary);
   }
-}
-
-.beat-indicator.active {
-  background-color: hotpink;
-}
-
-.beat-line.only .beat-indicator.active {
-  animation: flash 0.3s ease-out;
-}
-
-.beat-line.only .beat-label {
-  opacity: 0;
 }
 
 .beat-indicator {
@@ -70,7 +54,19 @@
   border-radius: 50%;
   background-color: var(--bg-secondary);
   margin-top: 16px;
-  transition: background-color 0.5s ease-in-out;
-  /* animation: none; */
-  /* border: 1px solid green; */
+}
+
+.beat-indicator.active {
+  animation: flash 0.4s ease-out;
+}
+
+.beat-line.only .beat-label {
+  opacity: 0;
+}
+
+.beat-indicator.off {
+  /* NOTE: I like how it looks when the lights/indicators appear only if the metronome is active.
+     Nevertheless, we may want to show the "lights off" in some cases (or themes.) */
+  /* background-color: var(--bg-primary); */
+  opacity: 0;
 }

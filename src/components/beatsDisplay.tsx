@@ -30,7 +30,7 @@ export default function BeatsDisplay({
     })
   }
 
-  const lights = beatInfo.map((beat) => {
+  const lights = beatInfo.map((beat, i) => {
     return (
       <div className={`beat`}>
         <div className={`beat-label ${!beat.active ? 'hidden' : ''}`}>
@@ -43,6 +43,7 @@ export default function BeatsDisplay({
           ></div>
         ) : (
           <div
+            key={i}
             className={`beat-indicator ${beat.active ? 'active' : ''} ${beat.off && 'off'}`}
           ></div>
         )}
