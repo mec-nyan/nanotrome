@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { baseBpm } from '../audio/tempo'
+import {
+  baseBpm,
+  defaultNumberOfBeatsPerBar,
+  defaultSubdivision,
+} from '../audio/tempo'
 import { type BeatType, MetronomeService } from '../audio/metronomeService'
 import Display from './display'
 import BeatsConfig from './beatsConfig'
@@ -10,8 +14,8 @@ import './metronome.css'
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
-  const [beats, setBeats] = useState(4)
-  const [subdivision, setSubdivision] = useState(1)
+  const [beats, setBeats] = useState(defaultNumberOfBeatsPerBar)
+  const [subdivision, setSubdivision] = useState(defaultSubdivision)
   const [isOn, setIsOn] = useState(false)
   // I'll use 'beatType' to display subdivision.
   const [_currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)

@@ -1,7 +1,15 @@
 // TODO: Check these values.
 export const baseBpm = 120
-export const maxBpm = 200
+export const maxBpm = 210
 export const minBpm = 40
+// TODO: Review these settings,
+// and maybe allow the user to override some limits on advanced settings.
+export const minBeatsPerBar = 1
+export const maxBeatsPerBar = 12
+export const defaultNumberOfBeatsPerBar = 4
+export const minSubdivisions = 1
+export const maxSubdivisions = 8
+export const defaultSubdivision = 1
 
 export function getTempoName(bpm: number): string {
   // TODO: There isn't a strict relationship between these names

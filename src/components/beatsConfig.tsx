@@ -1,5 +1,11 @@
 import BeatsSelector from './beatsSelector'
 import './beatsConfig.css'
+import {
+  maxBeatsPerBar,
+  maxSubdivisions,
+  minBeatsPerBar,
+  minSubdivisions,
+} from '../audio/tempo'
 
 export default function BeatsConfig({
   beats,
@@ -15,9 +21,21 @@ export default function BeatsConfig({
   return (
     <div className='beat-config-container'>
       <div className='beat-config'>
-        <BeatsSelector label='Beats' num={beats} setNum={setBeats} />
+        <BeatsSelector
+          label='Beats'
+          value={beats}
+          setValue={setBeats}
+          minValue={minBeatsPerBar}
+          maxValue={maxBeatsPerBar}
+        />
 
-        <BeatsSelector label='Sub' num={subdivision} setNum={setSubdivision} />
+        <BeatsSelector
+          label='Sub'
+          value={subdivision}
+          setValue={setSubdivision}
+          minValue={minSubdivisions}
+          maxValue={maxSubdivisions}
+        />
       </div>
     </div>
   )

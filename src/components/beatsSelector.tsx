@@ -2,29 +2,29 @@ import './beatsSelector.css'
 
 export default function BeatsSelector({
   label,
-  num,
-  setNum,
+  value,
+  setValue,
+  minValue,
+  maxValue,
 }: {
   label: string
-  num: number
-  setNum: (b: number) => void
+  value: number
+  setValue: (b: number) => void
+  minValue: number
+  maxValue: number
 }) {
-  // TODO: Handle max/min separately for beats and subdivision.
-  const maxNum = 10
-  const minNum = 1
-
   type action = 'increment' | 'decrement'
 
   const handleSetNum = (a: action) => {
     switch (a) {
       case 'increment':
-        if (num < maxNum) {
-          setNum(num + 1)
+        if (value < maxValue) {
+          setValue(value + 1)
         }
         break
       case 'decrement':
-        if (num > minNum) {
-          setNum(num - 1)
+        if (value > minValue) {
+          setValue(value - 1)
         }
         break
     }
@@ -41,7 +41,7 @@ export default function BeatsSelector({
         >
           -
         </div>
-        <div className='selector-value'>{num}</div>
+        <div className='selector-value'>{value}</div>
         <div
           className='selector-plus'
           onClick={() => handleSetNum('increment')}

@@ -1,3 +1,9 @@
+import {
+  baseBpm,
+  defaultNumberOfBeatsPerBar,
+  defaultSubdivision,
+} from './tempo'
+
 export type BeatType = 'accent' | 'beat' | 'subdivision'
 
 export type BeatCallback = (beatType: BeatType, beatNumber: number) => void
@@ -6,9 +12,9 @@ export class MetronomeService {
   private audioContext: AudioContext
   private isRunning = false
   private currentBeatIndex = 0
-  private tempo = 120
-  private beats: number = 4
-  private subdivision = 1
+  private tempo = baseBpm
+  private beats: number = defaultNumberOfBeatsPerBar
+  private subdivision = defaultSubdivision
   private nextNoteTime = 0
   private sheduleAheadTime = 0.1 // 100ms look-ahead
   private lookAheadTime = 0.025 // check every 25ms
@@ -104,6 +110,8 @@ export class MetronomeService {
 
   private getNoteType(beatIndex: number): BeatType {
     const subdivisionIndex = beatIndex % this.subdivision
+    // Yes, a beat is a 'quarter note'.  Some bars may have a different representation on shit music
+    // but that's not relevant here.
     const quarterNoteIndex =
       Math.floor(beatIndex / this.subdivision) % this.beats
 
