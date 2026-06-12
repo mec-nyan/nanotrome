@@ -16,7 +16,7 @@ export default function Metronome() {
   const [bpm, setBpm] = useState(baseBpm)
   const [beats, setBeats] = useState(defaultNumberOfBeatsPerBar)
   const [subdivision, setSubdivision] = useState(defaultSubdivision)
-  const [beatIndex, setBeatIndex] = useState<number | null>(null)
+  const [beatIndex, setBeatIndex] = useState<number>(0)
   const [isOn, setIsOn] = useState(false)
   // I'll use 'beatType' to display subdivision.
   const [_currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
