@@ -4,6 +4,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  position: relative;
   /* border: 1px solid chocolate; */
 }
 

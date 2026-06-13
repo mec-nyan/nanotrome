@@ -3,5 +3,18 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 40px 1fr 40px;
+  background-color: var(--bg-primary);
   /* border: 1px solid red; */
+}
+
+@media (orientation: portrait) {
+  .app {
+    max-width: 500px;
+  }
+}
+
+@media (orientation: landscape) {
+  .app {
+    max-width: 1000px;
+  }
 }

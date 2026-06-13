@@ -74,23 +74,28 @@ export default function Metronome() {
 
   return (
     <div className='metronome'>
-      <Display bpm={bpm} />
-      <Controls bpm={bpm} setBpm={setBpm} />
-      <BeatsConfig
-        beats={beats}
-        setBeats={setBeats}
-        subdivision={subdivision}
-        setSubdivision={setSubdivision}
-      />
-      <BeatsDisplay
-        index={beatIndex}
-        beats={beats}
-        beatIndex={currentBeatNumber}
-        subdivisions={beats * subdivision}
-        subdivisionIndex={subdivisionIndex}
-        running={isOn}
-      />
-      <StartStopButton isOn={isOn} toggle={toggleMetronome} />
+      <div id='top-group'>
+        <Display bpm={bpm} />
+        <Controls bpm={bpm} setBpm={setBpm} />
+      </div>
+
+      <div id='bottom-group'>
+        <BeatsConfig
+          beats={beats}
+          setBeats={setBeats}
+          subdivision={subdivision}
+          setSubdivision={setSubdivision}
+        />
+        <BeatsDisplay
+          index={beatIndex}
+          beats={beats}
+          beatIndex={currentBeatNumber}
+          subdivisions={beats * subdivision}
+          subdivisionIndex={subdivisionIndex}
+          running={isOn}
+        />
+        <StartStopButton isOn={isOn} toggle={toggleMetronome} />
+      </div>
     </div>
   )
 }
