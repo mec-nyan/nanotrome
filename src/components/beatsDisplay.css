@@ -1,7 +1,7 @@
 .beat-outer-container {
   width: 100%;
   margin-top: 32px;
-  padding: 32px;
+  padding: 16px 24px;
   /* border: 1px solid yellow; */
 }
 
@@ -69,4 +69,24 @@
      Nevertheless, we may want to show the "lights off" in some cases (or themes.) */
   /* background-color: var(--bg-primary); */
   opacity: 0;
+}
+
+.subdivision-display {
+  width: 100%;
+  height: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* border: 1px solid green; */
+}
+
+.subdivision-line {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: var(--bg-tertiary);
+}
+
+.subdivision-line.current {
+  color: yellowgreen;
 }

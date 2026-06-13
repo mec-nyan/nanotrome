@@ -3,12 +3,16 @@ import './beatsDisplay.css'
 export default function BeatsDisplay({
   index,
   beats,
-  beatNumber,
+  beatIndex,
+  subdivisions,
+  subdivisionIndex,
   running,
 }: {
   index: number
   beats: number
-  beatNumber: number
+  beatIndex: number
+  subdivisions: number
+  subdivisionIndex: number
   running: boolean
 }) {
   // TODO: Beat info may come from props.
@@ -21,7 +25,7 @@ export default function BeatsDisplay({
   let beatInfo: Light[] = []
 
   for (let i = 0; i < beats; i++) {
-    const active = beatNumber === i + 1
+    const active = beatIndex === i + 1
     const off = !running
     beatInfo.push({
       label: i + 1,
@@ -51,11 +55,25 @@ export default function BeatsDisplay({
     )
   })
 
+  let lines = []
+  for (let i = 0; i < subdivisions; i++) {
+    let bar = '|'
+    lines.push(
+      <div
+        className={`subdivision-line ${i === subdivisionIndex ? 'current' : ''}`}
+      >
+        {bar}
+      </div>
+    )
+  }
+
   return (
     <div className='beat-outer-container'>
       <div className={`beat-line ${lights.length === 1 && 'only'}`}>
         {running && lights}
       </div>
+
+      <div className='subdivision-display'>{running && lines}</div>
     </div>
   )
 }

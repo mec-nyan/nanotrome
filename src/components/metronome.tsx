@@ -17,6 +17,7 @@ export default function Metronome() {
   const [beats, setBeats] = useState(defaultNumberOfBeatsPerBar)
   const [subdivision, setSubdivision] = useState(defaultSubdivision)
   const [beatIndex, setBeatIndex] = useState<number>(0)
+  const [subdivisionIndex, setSubdivisionIndex] = useState(0)
   const [isOn, setIsOn] = useState(false)
   // I'll use 'beatType' to display subdivision.
   const [_currentBeatType, setCurrentBeatType] = useState<BeatType | null>(null)
@@ -28,9 +29,11 @@ export default function Metronome() {
     metronomeRef.current = new MetronomeService(bpm)
 
     unsubscribeRef.current = metronomeRef.current.onBeat(
-      (beatType, beatNumber, beatIndex) => {
+      (beatType, beatNumber, beatIndex, subIndex) => {
         setBeatIndex(beatIndex)
         setCurrentBeatType(beatType)
+        setSubdivisionIndex(subIndex)
+
         if (beatNumber > 0) {
           setCurrentBeatNumber(beatNumber)
         }
@@ -82,7 +85,9 @@ export default function Metronome() {
       <BeatsDisplay
         index={beatIndex}
         beats={beats}
-        beatNumber={currentBeatNumber}
+        beatIndex={currentBeatNumber}
+        subdivisions={beats * subdivision}
+        subdivisionIndex={subdivisionIndex}
         running={isOn}
       />
       <StartStopButton isOn={isOn} toggle={toggleMetronome} />
