@@ -55,15 +55,14 @@ export default function BeatsDisplay({
     )
   })
 
+  // Let's show the subdivisions per beat.
+  // Maybe add "1 & 2 &..."
   let lines = []
-  for (let i = 0; i < subdivisions; i++) {
-    let bar = '|'
+  for (let i = 0; i < subdivisions / beats; i++) {
     lines.push(
       <div
-        className={`subdivision-line ${i === subdivisionIndex ? 'current' : ''}`}
-      >
-        {bar}
-      </div>
+        className={`subdivision-line ${i === subdivisionIndex % (subdivisions / beats) ? 'current' : ''}`}
+      ></div>
     )
   }
 
