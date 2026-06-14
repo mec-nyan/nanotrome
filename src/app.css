@@ -3,18 +3,20 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 40px 1fr 40px;
+  grid-template-columns: 1fr;
+  justify-items: center;
   background-color: var(--bg-primary);
   /* border: 1px solid red; */
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (min-width: 480px) {
   .app {
-    max-width: 500px;
+    grid-template-rows: 60px 1fr 60px;
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-height: 480px) {
   .app {
-    max-width: 1000px;
+    grid-template-rows: 60px 1fr 60px;
   }
 }
