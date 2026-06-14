@@ -72,7 +72,9 @@ export default function BeatsDisplay({
         {running && lights}
       </div>
 
-      <div className='subdivision-display'>{running && lines}</div>
+      <div className='subdivision-display'>
+        {subdivisions > beats && running && lines}
+      </div>
     </div>
   )
 }

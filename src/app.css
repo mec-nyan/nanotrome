@@ -20,3 +20,9 @@
     grid-template-rows: 60px 1fr 60px;
   }
 }
+
+@media (orientation: landscape) and (max-height: 375px) {
+  .app {
+    grid-template-rows: 40px 1fr 0px;
+  }
+}

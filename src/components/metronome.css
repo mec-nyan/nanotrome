@@ -48,8 +48,10 @@
     height: 100%;
     width: 100%;
     display: flex;
+    padding-top: 1rem;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: stretch;
+    /* background-color: red; */
   }
 }

@@ -25,3 +25,18 @@ footer {
   color: mediumslateblue;
   font: inherit;
 }
+
+/* NOTE: For very small displays, show the message on the top (bar).
+   Maybe we can do this always (it looks good) when the app is in landscape mode. */
+@media (orientation: landscape) and (max-height: 375px) {
+  footer {
+    height: 40px;
+    width: fit-content;
+    position: fixed;
+    top: 0;
+    right: 60px;
+    font-style: italic;
+    border: none;
+    /* display: none; */
+  }
+}

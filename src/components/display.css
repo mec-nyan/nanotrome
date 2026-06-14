@@ -1,4 +1,5 @@
 .display-outer-container {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -50,4 +51,22 @@
   font-family: 'Charis SIL', serif;
   font-style: italic;
   font-size: 1rem;
+}
+
+@media (orientation: landscape) and (max-height: 375px) {
+  .display-tag {
+    padding: 4px 12px;
+    border: none;
+    background: none;
+    position: absolute;
+  }
+
+  .display-inner-container {
+    width: 100%;
+  }
+
+  .display {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
 }
