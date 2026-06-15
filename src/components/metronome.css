@@ -28,3 +28,12 @@
   align-items: flex-start;
   /* border: 1px solid hotpink; */
 }
+
+@media (orientation: landscape) {
+  .metronome {
+    grid-template-rows: 1fr;
+    grid-template-columns: 4fr 5fr;
+    gap: 3vw;
+    padding: 6vh 6vw 0;
+  }
+}

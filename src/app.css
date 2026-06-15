@@ -8,3 +8,9 @@
   background-color: var(--bg-primary);
   /* border: 1px solid red; */
 }
+
+@media (orientation: landscape) {
+  .app {
+    grid-template-rows: 9vh 1fr 9vh;
+  }
+}

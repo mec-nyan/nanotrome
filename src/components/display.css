@@ -57,3 +57,43 @@
   font-size: 3vh;
   /* border: 1px solid green; */
 }
+
+@media (orientation: landscape) {
+  .display-outer-container {
+    padding-top: 3vh;
+  }
+
+  .display-inner-container {
+    width: 100%;
+  }
+
+  .display-tag {
+    position: absolute;
+    top: 0;
+    left: 2vw;
+    border: 1px solid var(--bg-secondary);
+    padding: 0 3vw;
+    height: 6vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4vh;
+
+    font-size: 3vh;
+  }
+
+  .display {
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .bpm {
+    font-size: 15vh;
+  }
+
+  .tempo {
+    font-size: 5vh;
+  }
+}

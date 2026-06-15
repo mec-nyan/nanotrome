@@ -34,4 +34,12 @@
   .top-bar {
     padding: 0 2vw;
   }
+
+  .app-name {
+    font-size: 4vh;
+  }
+
+  .menu-icon {
+    font-size: 5vh;
+  }
 }

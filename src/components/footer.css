@@ -25,3 +25,13 @@ footer {
   color: mediumslateblue;
   font: inherit;
 }
+
+@media (orientation: landscape) {
+  .made-with-love {
+    font-size: 3vh;
+  }
+
+  .love {
+    font-size: 3.2vh;
+  }
+}
