@@ -10,8 +10,8 @@
 }
 
 .start-stop-button-outer {
-  width: 120px;
-  height: 48px;
+  width: 40%;
+  height: 40%;
   cursor: pointer;
   /* background-color: red; */
 }
@@ -26,6 +26,6 @@
   background-color: var(--bg-darker);
   color: var(--fg-tertiary);
   font-family: 'Noto Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 2.5vh;
   border: 1px solid var(--bg-secondary);
 }

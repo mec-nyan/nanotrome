@@ -10,13 +10,13 @@ footer {
 
 .made-with-love {
   font-family: 'Orbitron', 'Ubuntu Sans', 'Noto Sans', sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.8vh;
   color: var(--mid-gray);
 }
 
 .love {
   color: hotpink;
-  font-size: 1rem;
+  font-size: 2vh;
   margin: 0 4px;
   transform: translateY(2px);
 }

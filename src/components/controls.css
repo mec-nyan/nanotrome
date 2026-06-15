@@ -59,8 +59,8 @@
 }
 
 .control-button-inner {
-  width: 22px;
-  height: 22px;
+  width: 3.5vh;
+  height: 3.5vh;
   border-radius: 50%;
   background-image: linear-gradient(var(--bg-primary), var(--bg-darker));
   /* border: 1px solid black; */

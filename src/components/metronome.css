@@ -3,9 +3,9 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 2fr;
+  grid-template-rows: 4fr 5fr;
   overflow: scroll;
-  padding: 4vh 8vw;
+  padding: 4vh 8vw 0;
   /* border: 1px solid steelblue; */
 }
 
@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 3fr 3fr;
   grid-template-columns: 1fr;
   align-items: flex-start;
   /* border: 1px solid hotpink; */
