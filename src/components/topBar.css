@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
+  padding: 0 4vw;
   border-bottom: 1px solid var(--bg-secondary);
   /* border: 1px solid yellow; */
 }
@@ -20,23 +20,18 @@
   background-clip: text;
   color: transparent;
   font-family: 'Orbitron', 'Noto Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 2.5vh;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px black;
 }
 
 .menu-icon {
   color: var(--mid-gray);
+  font-size: 3.5vh;
 }
 
-@media (orientation: portrait) and (min-width: 480px) {
+@media (orientation: landscape) {
   .top-bar {
-    padding: 0 24px;
-  }
-}
-
-@media (orientation: landscape) and (min-height: 480px) {
-  .top-bar {
-    padding: 0 24px;
+    padding: 0 2vw;
   }
 }

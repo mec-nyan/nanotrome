@@ -2,27 +2,9 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 40px 1fr 40px;
+  grid-template-rows: 6vh 1fr 6vh;
   grid-template-columns: 1fr;
   justify-items: center;
   background-color: var(--bg-primary);
   /* border: 1px solid red; */
-}
-
-@media (orientation: portrait) and (min-width: 480px) {
-  .app {
-    grid-template-rows: 60px 1fr 60px;
-  }
-}
-
-@media (orientation: landscape) and (min-height: 480px) {
-  .app {
-    grid-template-rows: 60px 1fr 60px;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 375px) {
-  .app {
-    grid-template-rows: 40px 1fr 0px;
-  }
 }
