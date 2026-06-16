@@ -26,9 +26,9 @@
      inkscape:document-units="px"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="1"
-     inkscape:cx="63.5"
-     inkscape:cy="76.5"
+     inkscape:zoom="6.3984375"
+     inkscape:cx="63.921856"
+     inkscape:cy="64"
      inkscape:window-width="1904"
      inkscape:window-height="1027"
      inkscape:window-x="26"
@@ -122,11 +122,19 @@
        id="linearGradient8"
        inkscape:collect="always">
       <stop
-         style="stop-color:#1a1a1a;stop-opacity:1;"
+         style="stop-color:#1a1a1a;stop-opacity:1"
          offset="0"
          id="stop7" />
       <stop
-         style="stop-color:#999999;stop-opacity:1"
+         style="stop-color:#1a1a1a;stop-opacity:1"
+         offset="0.2712675"
+         id="stop4" />
+      <stop
+         style="stop-color:#4d4d4d;stop-opacity:1"
+         offset="0.3931435"
+         id="stop1" />
+      <stop
+         style="stop-color:#4d4d4d;stop-opacity:1"
          offset="1"
          id="stop8" />
     </linearGradient>
@@ -190,8 +198,8 @@
        inkscape:collect="always"
        xlink:href="#linearGradient8"
        id="linearGradient7"
-       x1="88"
-       y1="32"
+       x1="74.827835"
+       y1="12"
        x2="116"
        y2="80"
        gradientUnits="userSpaceOnUse" />
@@ -315,7 +323,7 @@
          y="48.594898"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#b3b3b3">120<tspan
    style="font-size:13.3333px;fill:#b3b3b3"
-   id="tspan8"></tspan></tspan><tspan
+   id="tspan8" /></tspan><tspan
          sodipodi:role="line"
          x="64.815979"
          y="88.594902"
