@@ -10,3 +10,7 @@
 [![typescript](https://img.shields.io/badge/ts-6.0.3-%233178c6?style=for-the-badge)](https://www.typescriptlang.org/)
 
 \* _(and not so serious...)_
+
+### Screenshots
+
+<img src='./images/screenshot.png' alt='nanotrome screenshot' widh='400' />
