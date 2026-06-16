@@ -1,0 +1,35 @@
+{
+  "id": "nntrm",
+  "name": "nanotrome",
+  "short_name": "nanotrome",
+  "description": "Advanced metronome for serious* musicians.  (*) And not so serious!",
+  "scope": "/nanotrome/",
+  "start_url": "/nanotrome/",
+  "theme_color": "#101010",
+  "background_color": "#101010",
+  "orientation": "any",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/nanotrome/icons/icon.svg",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/nanotrome/screenshots/nanotrome-screenshot-narrow.webp",
+      "sizes": "412x915",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Nanotrome app in portrait mode."
+    },
+    {
+      "src": "/nanotrome/screenshots/nanotrome-screenshot-wide.webp",
+      "sizes": "1440x900",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Nanotrome app in landscape mode."
+    }
+  ]
+}
