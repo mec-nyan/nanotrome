@@ -58,7 +58,7 @@
   justify-content: center;
   align-items: center;
   font-family: 'Noto Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 3vh;
   background-image: linear-gradient(
     210deg,
     var(--bg-secondary),
@@ -67,4 +67,22 @@
   );
   color: var(--mid-gray);
   border: 1px solid black;
+}
+
+@media (orientation: landscape) {
+  .selector-label {
+    font-size: 3vh;
+    top: 0;
+  }
+
+  .selector-value {
+    font-size: 4.5vh;
+  }
+
+  .selector-minus,
+  .selector-plus {
+    width: 8vh;
+    height: 8vh;
+    font-size: 5vh;
+  }
 }

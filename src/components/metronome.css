@@ -33,7 +33,7 @@
   .metronome {
     grid-template-rows: 1fr;
     grid-template-columns: 4fr 5fr;
-    gap: 3vw;
+    gap: 5vw;
     padding: 6vh 6vw 0;
   }
 }

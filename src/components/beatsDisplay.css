@@ -94,3 +94,18 @@
 .subdivision-line.current {
   background: yellowgreen;
 }
+
+@media (orientation: landscape) {
+  .beat-label {
+    font-size: 4vh;
+  }
+
+  .beat-indicator {
+    width: 4vh;
+    height: 4vh;
+  }
+
+  .subdivision-display {
+    height: 3vh;
+  }
+}
