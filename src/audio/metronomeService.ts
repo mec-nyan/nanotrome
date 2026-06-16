@@ -156,7 +156,7 @@ export class MetronomeService {
         'accent',
         {
           wave: 'triangle',
-          frequency: 880,
+          frequency: 880, // A5 at 880Hz.
           volume: 0.5,
           attack: 0.002,
           duration: 0.04,
@@ -167,7 +167,7 @@ export class MetronomeService {
         'beat',
         {
           wave: 'triangle',
-          frequency: 440,
+          frequency: 440, // A4 at 440Hz.
           volume: 0.5,
           attack: 0.002,
           duration: 0.04,
@@ -178,11 +178,11 @@ export class MetronomeService {
         'subdivision',
         {
           wave: 'sine',
-          frequency: 440,
-          volume: 0.3,
+          frequency: 660, // E5 at 660Hz (just intonation, A's fifth).
+          volume: 0.4,
           attack: 0.002,
-          duration: 0.01,
-          end: 0.02,
+          duration: 0.03,
+          end: 0.04,
         },
       ],
     ])

@@ -7,7 +7,7 @@ export default function TopBar() {
     <div className='top-bar'>
       <span className='app-name'>nanotrome</span>
       <span className='material-symbols-outlined menu-icon'>
-        {isOpen ? 'close' : 'menu'}
+        {isOpen ? 'close' : 'more_vert'}
       </span>
     </div>
   )
