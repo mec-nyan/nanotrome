@@ -1,14 +1,12 @@
 import './beatsDisplay.css'
 
 export default function BeatsDisplay({
-  index,
   beats,
   beatIndex,
   subdivisions,
   subdivisionIndex,
   running,
 }: {
-  index: number
   beats: number
   beatIndex: number
   subdivisions: number
@@ -34,23 +32,15 @@ export default function BeatsDisplay({
     })
   }
 
-  const lights = beatInfo.map((beat, i) => {
+  const lights = beatInfo.map((beat) => {
     return (
       <div className={`beat`}>
         <div className={`beat-label ${!beat.active ? 'hidden' : ''}`}>
           {beat.label}
         </div>
-        {beats === 1 ? (
-          <div
-            key={index}
-            className={`beat-indicator ${beat.active ? 'active' : ''} ${beat.off && 'off'}`}
-          ></div>
-        ) : (
-          <div
-            key={i}
-            className={`beat-indicator ${beat.active ? 'active' : ''} ${beat.off && 'off'}`}
-          ></div>
-        )}
+        <div
+          className={`beat-indicator ${beat.active ? 'active' : ''} ${beat.off && 'off'}`}
+        ></div>
       </div>
     )
   })

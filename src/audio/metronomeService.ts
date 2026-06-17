@@ -9,7 +9,6 @@ export type BeatType = 'accent' | 'beat' | 'subdivision'
 export type BeatCallback = (
   beatType: BeatType,
   beatNumber: number,
-  beatIndex: number,
   subdivisionIndex: number
 ) => void
 
@@ -98,8 +97,6 @@ export class MetronomeService {
         ? (Math.floor(beatIndex / this.subdivision) % this.beats) + 1
         : -1
 
-    const beatCount = Math.floor(beatIndex / this.subdivision)
-
     const notesPerBar = this.beats * this.subdivision
     const subdivisionIndex = beatIndex % notesPerBar
 
@@ -115,7 +112,7 @@ export class MetronomeService {
       }
       this.penidngVisualUpdates.delete(updateId)
       this.beatCallbacks.forEach((cb) => {
-        cb(noteType, displayBeatNumber, beatCount, subdivisionIndex)
+        cb(noteType, displayBeatNumber, subdivisionIndex)
       })
     }, delayMs)
   }
