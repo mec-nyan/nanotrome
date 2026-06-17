@@ -26,9 +26,9 @@
      inkscape:document-units="px"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="6.3984375"
-     inkscape:cx="63.921856"
-     inkscape:cy="64"
+     inkscape:zoom="1"
+     inkscape:cx="64.5"
+     inkscape:cy="63.5"
      inkscape:window-width="1904"
      inkscape:window-height="1027"
      inkscape:window-x="26"
@@ -202,7 +202,8 @@
        y1="12"
        x2="116"
        y2="80"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.84615385,0,0,1,9.8461538,0)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient11"
@@ -288,19 +289,19 @@
        y="0"
        ry="16" />
     <rect
-       style="fill:url(#linearGradient7);stroke-width:2;stroke-linejoin:round;fill-opacity:1"
+       style="fill:url(#linearGradient7);fill-opacity:1;stroke-width:1.83973;stroke-linejoin:round"
        id="rect6"
-       width="104"
+       width="88"
        height="68"
-       x="12"
+       x="20"
        y="12"
        ry="8" />
     <rect
-       style="fill:#000000;stroke-width:2;stroke-linejoin:round"
+       style="fill:#000000;stroke-width:1.83973;stroke-linejoin:round"
        id="rect3"
-       width="96"
+       width="81.230774"
        height="60"
-       x="16"
+       x="23.384615"
        y="16"
        ry="8" />
     <rect
@@ -310,31 +311,33 @@
        height="52"
        x="20.000002"
        y="20"
-       ry="8" />
+       ry="8"
+       transform="matrix(0.84615384,0,0,1,9.8461538,0)" />
     <text
        xml:space="preserve"
-       style="font-size:32px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;opacity:1;fill:#b3b3b3;stroke-width:2;stroke-linejoin:round"
-       x="64.815979"
-       y="48.594898"
-       id="text6"><tspan
+       style="font-size:29.4357px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;opacity:1;fill:#b3b3b3;stroke-width:1.83973;stroke-linejoin:round"
+       x="70.325928"
+       y="44.700806"
+       id="text6"
+       transform="scale(0.91986621,1.0871146)"><tspan
          sodipodi:role="line"
          id="tspan6"
-         x="64.815979"
-         y="48.594898"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#b3b3b3">120<tspan
-   style="font-size:13.3333px;fill:#b3b3b3"
+         x="70.325928"
+         y="44.700806"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.4357px;font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#b3b3b3;stroke-width:1.83973">120<tspan
+   style="font-size:12.2648px;fill:#b3b3b3;stroke-width:1.83973"
    id="tspan8" /></tspan><tspan
          sodipodi:role="line"
-         x="64.815979"
-         y="88.594902"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#b3b3b3"
+         x="70.325928"
+         y="81.495445"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.4357px;font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#b3b3b3;stroke-width:1.83973"
          id="tspan9"><tspan
-           style="font-size:13.3333px;fill:#b3b3b3"
+           style="font-size:12.2648px;fill:#b3b3b3;stroke-width:1.83973"
            id="tspan10"
-           dy="-22.661783">BPM</tspan></tspan></text>
+           dy="-20.84581">BPM</tspan></tspan></text>
     <g
        id="g16"
-       transform="matrix(1.25,0,0,1.25,-16,-23)">
+       transform="matrix(1.25,0,0,1.25,-16,-26)">
       <circle
          style="opacity:1;fill:url(#linearGradient12);fill-opacity:1;stroke-width:2;stroke-linejoin:round"
          id="path11"
@@ -350,7 +353,7 @@
     </g>
     <g
        id="g23"
-       transform="translate(-1)">
+       transform="translate(-5,-3)">
       <rect
          style="opacity:1;fill:url(#linearGradient23);fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round"
          id="rect21"
@@ -374,7 +377,7 @@
     </g>
     <g
        id="g24"
-       transform="translate(-3)">
+       transform="translate(1,-3)">
       <rect
          style="opacity:1;fill:url(#linearGradient17);fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round"
          id="rect16"
